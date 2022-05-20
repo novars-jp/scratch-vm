@@ -31,7 +31,6 @@ class MaBeee {
     }
 
     scan() {
-        console.log("scan");
         if (this._ble) {
             this._ble.disconnect();
         }
@@ -47,21 +46,18 @@ class MaBeee {
     }
 
     connect(id) {
-        console.log("connect");
         if (this._ble) {
             this._ble.connectPeripheral(id);
         }
     }
 
     disconnect() {
-        console.log("disconnect");
         if (this._ble) {
             this._ble.disconnect();
         }
     }
 
     isConnected() {
-        console.log("isConnected");
         if (this._ble) {
             return this._ble.isConnected();
         }
@@ -70,19 +66,15 @@ class MaBeee {
     }
 
     _onConnect() {
-        console.log("_onConnect");
     }
 
     _onMessage() {
-        console.log("_onMessage");
     }
 
     reset() {
-        console.log("reset");
     }
 
     send(value) {
-        console.log("send");
         if (!this.isConnected()) {
             return;
         }
@@ -119,8 +111,6 @@ class MaBeee {
     }
 
     setPwm(value) {
-        console.log("setPwm");
-        console.log(value);
         this.send(value);
     }
 
@@ -163,8 +153,6 @@ class MaBeeeBlock {
     }
 
     setPower(args) {
-        console.log("setPower");
-        console.log(args.VALUE);
         var power = parseInt(args.VALUE);
 
         if (power < 0) {
